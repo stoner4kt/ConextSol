@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConextSol</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="container">
+    <a href="#" class="logo">Conext<span>Sol</span></a> <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#services-section">Services</a></li>
+            <li><a href="#projects-section">Projects</a></li>
+           <li><a href="#services-section">Help</a></li>
+        </ul>
+    </nav>
+    <button id="openContactModal" class="contact-button">Contact Us</button>
+</header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>Welcome></h>
+        <p>Your Technology Vision, Realized or From Concept to Code, Building Your Digital Future. </p>
+                <button id="openContactModal"class="contact-button">Get In Touch</button>
+            </div>
+            <div class="hero-image">
+            </div>
+        </section>
+<section class="advantage-section" id="services-section">
+    <div class="container">
+        <h2>Our Advantage</h2> 
+                <div class="advantage-grid">
+                    <div class="advantage-item">
+                        <div class="icon">💡</div> <p><h4>Services </h4></p>
+                        <h3>Financial Expertise</h3>
+                        <p>Leverage our deep financial insights and experience to navigate complex markets and make informed decisions about your wealth.</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="icon">🚀</div>
+                        <h3>Advanced Technology</h3>
+                        <p>Tell Us Your Goal: Share your project idea, technical challenge, or business objective via our simple contact form or a quick call </p>
+                    </div>
+                    <div class="advantage-item"id="right-advice">
+                     <div class="icon">💬</div>
+                        <h3>Right Advice</h3>
+                        <p>Receive tailored, objective advice from our dedicated advisors, ensuring your financial strategy aligns perfectly with your goals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="analysis-section" id="projects-section"> 
+    <div class="container analysis-content">
+                <h2>Analysis of Your Wealth</h2>
+                   <p>Hello, I’m **Tashreeq Jones** — a dedicated professional providing expert solutions to help bring your ideas to life. Assisting you with whatever you may need.</p> 
+            </div>
+            <div class="analysis-image">
+                <img src="https://via.placeholder.com/600x600/6A0DAD/E0E0E0?text=Person+Connecting+Stars" alt="Person connecting stars in a constellation">
+            </div>
+        </section>
+    </main>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeContactModal">&times;</span>
+            <h2>Get In Touch</h2>
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contact" />
+                <p class="hidden">
+                    <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                </p>
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="john.doe@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number (Optional)</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" required placeholder="Tell us about your financial goals..."></textarea>
+                </div>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

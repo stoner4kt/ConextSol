@@ -1,0 +1,496 @@
+:root {
+    --dark-blue-gradient-start: #1a0a33;
+    --dark-blue-gradient-end: #3b0d6b;
+    --purple-gradient-start: #3b0d6b;
+    --purple-gradient-end: #6e00ff;
+    --text-color-light: #f0f0f0;
+    --text-color-dark: #b0b0b0;
+    --primary-button-bg: #8c2ffc;
+    --primary-button-hover: #a252ff;
+    --icon-color: #7a3cfc;
+    --line-color: #4a2d7f;
+    --footer-bg: #210d40;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, var(--dark-blue-gradient-start) 0%, var(--dark-blue-gradient-end) 100%);
+    color: var(--text-color-light);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color-light);
+    text-decoration: none;
+}
+.logo span {
+    color: var(--primary-button-bg);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--text-color-dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--text-color-light);
+}
+
+.contact-button {
+    background-color: var(--primary-button-bg);
+    border: 1px solid var(--primary-button-bg);
+    color: var(--text-color-light);
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: var(--primary-button-hover);
+    border-color: var(--primary-button-hover);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    background: linear-gradient(180deg, #2a0b50 0%, #0c021c 100%);
+    padding: 100px 0;
+    text-align: left;
+    overflow: hidden;
+    border-bottom-left-radius: 50% 20px;
+    border-bottom-right-radius: 50% 20px;
+    margin-bottom: 50px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://via.placeholder.com/1920x1080/0e0520/3c0563?text=Abstract+Landscape') no-repeat center center/cover; /* Placeholder background */
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto 0 0; /* Align left */
+    padding-left: 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-color-dark);
+    margin-bottom: 40px;
+}
+
+.hero .btn {
+    background-color: var(--primary-button-bg);
+    color: var(--text-color-light);
+    padding: 15px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero .btn:hover {
+    background-color: var(--primary-button-hover);
+}
+
+.hero-image {
+    position: absolute;
+    right: -10%;
+    bottom: 0;
+    width: 50%;
+    height: auto;
+    z-index: 1;
+}
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 0 20px rgba(100, 0, 255, 0.5));
+}
+
+/* Advantage Section */
+.advantage-section {
+    padding: 80px 0;
+    background-color: transparent;
+}
+
+.advantage-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: var(--text-color-light);
+}
+
+.advantage-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.advantage-item {
+    flex-basis: calc(33% - 40px);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.advantage-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.advantage-item .icon {
+    font-size: 3rem;
+    color: var(--icon-color);
+    margin-bottom: 20px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    background-color: rgba(122, 60, 252, 0.1);
+}
+
+.advantage-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--text-color-light);
+}
+
+.advantage-item p {
+    font-size: 1rem;
+    color: var(--text-color-dark);
+    line-height: 1.6;
+}
+
+/* Analysis Section */
+.analysis-section {
+    position: relative;
+    padding: 100px 0 200px 0;
+    background: linear-gradient(180deg, #1c0a37 0%, #0d011f 100%);
+    color: var(--text-color-light);
+    overflow: hidden;
+    border-top-left-radius: 50% 20px;
+    border-top-right-radius: 50% 20px;
+    margin-top: 50px;
+}
+
+.analysis-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin: 0 0 0 auto; /* Align right */
+    padding-right: 20px;
+    text-align: right;
+}
+
+.analysis-section h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-button-bg);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.analysis-section h3 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.analysis-section p {
+    font-size: 1.1rem;
+    color: var(--text-color-dark);
+    line-height: 1.7;
+}
+
+.analysis-image {
+    position: absolute;
+    left: -10%;
+    bottom: 0;
+    width: 50%;
+    height: auto;
+    z-index: 1;
+}
+.analysis-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 0 20px rgba(100, 0, 255, 0.5));
+}
+
+/* --- Modal Contact Form Styles --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 100; /* High z-index to cover everything */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #2a0b50, #1c0a37);
+    margin: 10% auto; /* Center vertically and horizontally */
+    padding: 30px;
+    border: none;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 450px; /* Max width for form */
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-btn {
+    color: var(--text-color-dark);
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--primary-button-bg);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    color: var(--text-color-light);
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-color-dark);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--line-color);
+    border-radius: 8px;
+    background-color: #1a0a33;
+    color: var(--text-color-light);
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-button-bg);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(140, 47, 252, 0.3);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.modal-content button[type="submit"] {
+    width: 100%;
+    background-color: var(--primary-button-bg);
+    color: var(--text-color-light);
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button[type="submit"]:hover {
+    background-color: var(--primary-button-hover);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    .hero-image {
+        width: 60%;
+        right: -15%;
+    }
+    .analysis-section h3 {
+        font-size: 2.2rem;
+    }
+    .analysis-image {
+        width: 60%;
+        left: -15%;
+    }
+    .advantage-item {
+        flex-basis: calc(50% - 30px);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    .hero {
+        padding: 80px 0;
+        text-align: center;
+    }
+    .hero-content {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .hero-image, .analysis-image {
+        display: none; /* Hide illustrative images on smaller screens */
+    }
+    .advantage-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .advantage-item {
+        flex-basis: 90%;
+    }
+    .analysis-section {
+        padding: 80px 0;
+    }
+    .analysis-content {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 20px;
+        text-align: center;
+    }
+    .analysis-section h3 {
+        font-size: 2rem;
+    }
+    .modal-content {
+        margin: 20% auto; /* Adjust margin for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+    nav a {
+        font-size: 0.9rem;
+    }
+    .contact-button {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero .btn {
+        padding: 12px 30px;
+    }
+    .advantage-section h2 {
+        font-size: 2rem;
+    }
+    .advantage-item h3 {
+        font-size: 1.3rem;
+    }
+    .analysis-section h3 {
+        font-size: 1.8rem;
+    }
+    .analysis-section p {
+        font-size: 0.9rem;
+    }
+    .modal-content {
+        margin: 10% 5%;
+        width: 90%;
+    }
+}
