@@ -152,7 +152,7 @@ nav a:hover {
     z-index: 1;
 }
 .hero-image img {
-    max-width: 100%;
+    max-width: 10%;
     height: auto;
     display: block;
     filter: drop-shadow(0 0 20px rgba(100, 0, 255, 0.5));
@@ -223,19 +223,44 @@ nav a:hover {
 .analysis-section {
     position: relative;
     padding: 100px 0 200px 0;
-    background: linear-gradient(180deg, #1c0a37 0%, #0d011f 100%);
+    /* REMOVED: background: linear-gradient(180deg, #1c0a37 0%, #0d011f 100%); */ 
     color: var(--text-color-light);
     overflow: hidden;
     border-top-left-radius: 50% 20px;
     border-top-right-radius: 50% 20px;
     margin-top: 50px;
+    
+    background-image: url('image1.png');
+    background-repeat: no-repeat;
+    background-position: center bottom 50px;
+    background-size: 350px;
+    
+    /* Ensure the text content is above the overlay */
+    z-index: 0; /* Ensures its children (analysis-content) have positive z-index */
 }
 
+.analysis-section::before {
+    content: ''; /* Required for pseudo-elements */
+    position: absolute; /* Position it absolutely within the section */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* This creates a semi-transparent dark overlay. Adjust the rgba color and opacity. */
+    background: linear-gradient(180deg, rgba(28, 10, 55, 0.8) 0%, rgba(13, 1, 31, 0.8) 100%);
+    /* The 0.8 in rgba is the opacity. Change it to:
+       - 0.9 for a darker overlay (image more faded)
+       - 0.6 for a lighter overlay (image less faded) 
+    */
+    z-index: 1; /* Place it above the background image */
+}
+
+/* Ensure your text content is always above the overlay */
 .analysis-content {
-    position: relative;
-    z-index: 2;
+    position: relative; /* Make sure this is relative or absolute */
+    z-index: 2; /* Ensure it's above the ::before overlay */
     max-width: 600px;
-    margin: 0 0 0 auto; /* Align right */
+    margin: 0 0 0 auto;
     padding-right: 20px;
     text-align: right;
 }
@@ -492,5 +517,83 @@ nav a:hover {
     .modal-content {
         margin: 10% 5%;
         width: 90%;
+    }
+}
+/* --- Reviews Section Styles --- */
+.reviews-section {
+    padding: 80px 0;
+    background-color: var(--dark-blue-gradient-start); /* Use the existing dark background */
+}
+
+.reviews-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.reviews-section .subtitle {
+    text-align: center;
+    color: var(--text-color-dark);
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+}
+
+.reviews-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.review-box {
+    flex-basis: 30%; /* Three boxes per row */
+    min-width: 300px; /* Minimum width for each box */
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--line-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.review-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(140, 47, 252, 0.2);
+}
+
+.review-box .rating {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.review-box .review-text {
+    font-style: italic;
+    color: var(--text-color-light);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.reviewer-info {
+    border-top: 1px solid var(--line-color);
+    padding-top: 15px;
+}
+
+.reviewer-name {
+    display: block;
+    font-weight: 600;
+    color: var(--primary-button-bg);
+    font-size: 1.1rem;
+}
+
+.reviewer-title {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-color-dark);
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 768px) {
+    .review-box {
+        flex-basis: 100%; /* Stack reviews vertically on small screens */
     }
 }
